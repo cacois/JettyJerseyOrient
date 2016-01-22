@@ -44,7 +44,7 @@ public class JsonEndpoint {
         try {
             ODatabaseDocumentTx db = new ODatabaseDocumentTx("remote:localhost/test").open("admin", "admin");
             try {
-                record = db.load(recordId(rid));
+                record = db.load(new ORecordId(rid));
             } finally {
                 db.close();
             }
@@ -90,7 +90,7 @@ public class JsonEndpoint {
         try {
             ODatabaseDocumentTx db = new ODatabaseDocumentTx("remote:localhost/test").open("admin", "admin");
             try {
-                record = db.load(recordId(rid));
+                record = db.load(new ORecordId(rid));
                 if(record == null) {
                     return Response.status(404).build();
                 } else {
@@ -116,7 +116,7 @@ public class JsonEndpoint {
         try {
             ODatabaseDocumentTx db = new ODatabaseDocumentTx("remote:localhost/test").open("admin", "admin");
             try {
-                record = db.load(recordId(rid));
+                record = db.load(new ORecordId(rid));
                 if(record == null) {
                     return Response.status(404).build();
                 } else {
@@ -130,9 +130,5 @@ public class JsonEndpoint {
             e.printStackTrace();
             return Response.serverError().build();
         }
-    }
-
-    public ORecordId recordId(String rid) {
-        return new ORecordId("#"+rid);
     }
 }

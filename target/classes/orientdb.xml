@@ -26,7 +26,7 @@
         <user name="root" password="root" resources="*"/>
     </users>
     <properties>
-        <entry name="orientdb.www.path" value="/Users/hzektser/IdeaProjects/JettyJerseyOrient/src/main/resources/www" />
+        <entry name="orientdb.www.path" value="/Users/cacois/Code/JettyJerseyOrient/src/main/resources/www" />
         <entry name="server.cache.staticResources" value="false"/>
         <entry name="log.console.level" value="info"/>
         <entry name="log.file.level" value="fine"/>
